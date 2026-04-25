@@ -1,0 +1,250 @@
+[
+    {
+        "title": "আর রাহীকুল মাখতুম",
+        "author": "আল্লামা সফিউর রহমান মুবারকপুরী (রহ.)",
+        "publisher": "মাকতাবায়ে যাকারিয়া",
+        "thumbnail": "./thumbnail/আর রাহীকুল মাখতুম.png",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "তাসাওউফ ও আত্মশুদ্ধি",
+        "author": "শাইখুল ইসলাম মুফতী মুহাম্মাদ তাকী",
+        "publisher": "",
+        "thumbnail": "./thumbnail/তাসাওউফ ও আত্মশুদ্ধি.png",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "আকাশের ওপারে আকাশ",
+        "author": "",
+        "publisher": "লস্ট মডেস্টি ব্লগ",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "হৃদয়ের দিনলিপি",
+        "author": "আল্লামা ইবনুল জাওযী (রহঃ)",
+        "publisher": "মাকতাবাতুল হাসান",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "পাওয়ারফুল ফোকাস",
+        "author": "থিবাউট মিউরিস",
+        "publisher": "অনুবাদ",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "স্ট্রাটেজিক মাইন্ডসেট",
+        "author": "থিবাউট মিউরিস",
+        "publisher": "অনুবাদ",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "ডোপামিন ডিটক্স",
+        "author": "থিবাউট মিউরিস",
+        "publisher": "অনুবাদ",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "The Power of your Subconscious Mind",
+        "author": "Dr. Joseph Murphy",
+        "publisher": "অনুবাদ",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "ইমিডিয়েট অ্যাকশন",
+        "author": "থিবাউট মিউরিস",
+        "publisher": "অনুবাদ",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "মুক্ত বাতাসের খোঁজে",
+        "author": "",
+        "publisher": "লস্ট মডেস্টি ব্লগ",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "আত্মার ওষুধ",
+        "author": "আল্লামা ইবনুল কায়্যিম জাওযিয়্যাহ রহ",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "প্রত্যাবর্তন ১",
+        "author": "সমকালীন সংকলন টিম",
+        "publisher": "সমকালীন সংকলন",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "প্রত্যাবর্তন ২",
+        "author": "সমকালীন সংকলন টিম",
+        "publisher": "সমকালীন সংকলন",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "আত-তিব্বুন নববি সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম",
+        "author": "আল্লামা ইবনুল কায়্যিম জাওযিয়্যাহ রহ",
+        "publisher": "দারুল আরকাম",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "হিসনুল মুসলিম",
+        "author": "",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "প্যারেন্টিং",
+        "author": "নাজমা জামান, আমির জামান",
+        "publisher": "ইনস্টিটিউট অব ফ্যামিলি ডেভেলপমেন্ট",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "কষ্টিপাথর",
+        "author": "ডা. শামসুল আরেফীন",
+        "publisher": "ইসলামি আদর্শ ও মতবাদ",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "হৃদয়ের সাথে হৃদয়ের কথা",
+        "author": "মাহমুদ বিন নূর",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "অলসতার বিরুদ্ধে লড়াই",
+        "author": "মাহমুদ বিন নূর",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "শয়তানের বিরুদ্ধে লড়াই",
+        "author": "মাহমুদ বিন নূর",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "নফসের বিরুদ্ধে লড়াই",
+        "author": "মাহমুদ বিন নূর",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "যেভাবে স্বামীর হৃদয় জয় করবেন",
+        "author": "শাইখ ইবরাহিম ইবনু সালেহ আল মাহমুদ",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "যেভাবে স্ত্রীর হৃদয় জয় করবেন",
+        "author": "শাইখ ইবরাহিম ইবনু সালেহ আল মাহমুদ",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "অশ্রুজলে লেখা",
+        "author": "আবদুল মালিক আল কাসিম",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "জীবন যদি হতো নারী সাহাবীর মত",
+        "author": "ড. হানান লাশিন",
+        "publisher": "সমকালীন প্রকাশন",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "বেলা ফুরাবার আগে",
+        "author": "আরিফ আজাদ",
+        "publisher": "সমকালীন প্রকাশন",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "দ্য কেয়ারিং হাজব্যান্ড",
+        "author": "মোঃ মতিউর রহমান",
+        "publisher": "মিফতাহ প্রকাশনী",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "দ্য কেয়ারিং ওয়াইফ",
+        "author": "মোঃ মতিউর রহমান",
+        "publisher": "মিফতাহ প্রকাশনী",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "হাতেকলমে জাভাস্ক্রিপ্ট",
+        "author": "জুনায়েদ আহমেদ",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "চেষ্টার জিমনেসিয়াম ফিউচারের ক্যালসিয়াম",
+        "author": "ঝংকার মাহবুব",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    },
+    {
+        "title": "তারাবীহর সালাতে কুরআনের বার্তা",
+        "author": "শায়খ আহমাদুল্লাহ",
+        "publisher": "",
+        "thumbnail": "",
+        "collected": true,
+        "is_read": false
+    }
+]
