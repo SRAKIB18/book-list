@@ -27,7 +27,7 @@
         "title": "হৃদয়ের দিনলিপি",
         "author": "আল্লামা ইবনুল জাওযী (রহঃ)",
         "publisher": "মাকতাবাতুল হাসান",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/হৃদয়ের দিনলিপি.png",
         "collected": true,
         "is_read": false
     },
@@ -235,7 +235,7 @@
         "title": "চেষ্টার জিমনেসিয়াম ফিউচারের ক্যালসিয়াম",
         "author": "ঝংকার মাহবুব",
         "publisher": "",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/চেষ্টার জিমনেসিয়াম ফিউচারের ক্যালসিয়াম.png",
         "collected": true,
         "is_read": false
     },
