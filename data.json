@@ -19,7 +19,7 @@
         "title": "আকাশের ওপারে আকাশ",
         "author": "",
         "publisher": "লস্ট মডেস্টি ব্লগ",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/আকাশের ওপারে আকাশ.png",
         "collected": true,
         "is_read": false
     },
@@ -243,7 +243,7 @@
         "title": "তারাবীহর সালাতে কুরআনের বার্তা",
         "author": "শায়খ আহমাদুল্লাহ",
         "publisher": "",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/তারাবীহর সালাতে কুরআনের বার্তা.png",
         "collected": true,
         "is_read": false
     }
