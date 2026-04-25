@@ -83,7 +83,7 @@
         "title": "আত্মার ওষুধ",
         "author": "আল্লামা ইবনুল কায়্যিম জাওযিয়্যাহ রহ",
         "publisher": "",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/আত্মার ওষুধ.png",
         "collected": true,
         "is_read": false
     },
@@ -91,7 +91,7 @@
         "title": "প্রত্যাবর্তন ১",
         "author": "সমকালীন সংকলন টিম",
         "publisher": "সমকালীন সংকলন",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/প্রত্যাবর্তন ১.png",
         "collected": true,
         "is_read": false
     },
@@ -99,7 +99,7 @@
         "title": "প্রত্যাবর্তন ২",
         "author": "সমকালীন সংকলন টিম",
         "publisher": "সমকালীন সংকলন",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/প্রত্যাবর্তন ২.png",
         "collected": true,
         "is_read": false
     },
@@ -131,7 +131,7 @@
         "title": "কষ্টিপাথর",
         "author": "ডা. শামসুল আরেফীন",
         "publisher": "ইসলামি আদর্শ ও মতবাদ",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/কষ্টিপাথর.png",
         "collected": true,
         "is_read": false
     },
@@ -144,25 +144,25 @@
         "is_read": false
     },
     {
-        "title": "অলসতার বিরুদ্ধে লড়াই",
+        "title": "নফসের বিরুদ্ধে লড়াই",
         "author": "মাহমুদ বিন নূর",
-        "publisher": "",
-        "thumbnail": "",
+        "publisher": "রাইয়ান প্রকাশন",
+        "thumbnail": "./thumbnail/নফসের বিরুদ্ধে লড়াই.png",
         "collected": true,
         "is_read": false
     },
     {
         "title": "শয়তানের বিরুদ্ধে লড়াই",
         "author": "মাহমুদ বিন নূর",
-        "publisher": "",
+        "publisher": "রাইয়ান প্রকাশন",
         "thumbnail": "",
         "collected": true,
         "is_read": false
     },
     {
-        "title": "নফসের বিরুদ্ধে লড়াই",
+        "title": "অলসতার বিরুদ্ধে লড়াই",
         "author": "মাহমুদ বিন নূর",
-        "publisher": "",
+        "publisher": "রাইয়ান প্রকাশন",
         "thumbnail": "",
         "collected": true,
         "is_read": false
@@ -186,8 +186,8 @@
     {
         "title": "অশ্রুজলে লেখা",
         "author": "আবদুল মালিক আল কাসিম",
-        "publisher": "",
-        "thumbnail": "",
+        "publisher": "সমকালীন প্রকাশন",
+        "thumbnail": "./thumbnail/অশ্রুজলে লেখা.png",
         "collected": true,
         "is_read": false
     },
@@ -195,7 +195,7 @@
         "title": "জীবন যদি হতো নারী সাহাবীর মত",
         "author": "ড. হানান লাশিন",
         "publisher": "সমকালীন প্রকাশন",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/জীবন যদি হতো নারী সাহাবীর মত.png",
         "collected": true,
         "is_read": false
     },
@@ -203,7 +203,7 @@
         "title": "বেলা ফুরাবার আগে",
         "author": "আরিফ আজাদ",
         "publisher": "সমকালীন প্রকাশন",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/বেলা ফুরাবার আগে.png",
         "collected": true,
         "is_read": false
     },
@@ -227,7 +227,7 @@
         "title": "হাতেকলমে জাভাস্ক্রিপ্ট",
         "author": "জুনায়েদ আহমেদ",
         "publisher": "",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/হাতেকলমে জাভাস্ক্রিপ্ট.png",
         "collected": true,
         "is_read": false
     },

@@ -1,350 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book List Sheet</title>
-    <style>
-        :root {
-            --bg: #f4f7fb;
-            --panel: #ffffff;
-            --line: #d4dbe6;
-            --text: #10243f;
-            --sub: #53627a;
-            --accent: #1570ef;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-        }
-
-        .app {
-            max-width: 1100px;
-            margin: 24px auto;
-            padding: 16px;
-        }
-
-        .toolbar {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 12px;
-        }
-
-        .toolbar h1 {
-            margin: 0;
-            font-size: 22px;
-            font-weight: 700;
-        }
-
-        .search-wrap {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            width: min(520px, 100%);
-        }
-
-        #searchInput {
-            width: 100%;
-            height: 40px;
-            border: 1px solid var(--line);
-            border-radius: 6px;
-            padding: 0 12px;
-            font-size: 14px;
-            background: #fff;
-            color: var(--text);
-        }
-
-        #searchInput:focus {
-            outline: 2px solid rgba(21, 112, 239, 0.15);
-            border-color: var(--accent);
-        }
-
-        #count {
-            color: var(--sub);
-            font-size: 13px;
-            margin-bottom: 10px;
-        }
-
-        .sheet {
-            background: var(--panel);
-            border: 1px solid var(--line);
-            border-radius: 6px;
-            overflow: auto;
-            max-height: 72vh;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 860px;
-        }
-
-        thead th {
-            position: sticky;
-            top: 0;
-            background: #eaf1fb;
-            z-index: 1;
-            font-size: 13px;
-            text-align: left;
-            white-space: nowrap;
-        }
-
-        .sort-btn {
-            width: 100%;
-            border: 0;
-            background: transparent;
-            color: inherit;
-            font: inherit;
-            text-align: left;
-            cursor: pointer;
-            padding: 0;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .sort-btn.center {
-            justify-content: center;
-        }
-
-        .sort-btn .arrow {
-            color: #446182;
-            font-size: 11px;
-            min-width: 10px;
-            text-align: center;
-        }
-
-        th, td {
-            border: 1px solid var(--line);
-            padding: 10px 12px;
-            font-size: 14px;
-            vertical-align: top;
-        }
-
-        tbody tr:nth-child(even) {
-            background: #fafcff;
-        }
-
-        .center {
-            text-align: center;
-        }
-
-        .thumb {
-            width: 64px;
-            height: 84px;
-            object-fit: cover;
-            border: 1px solid var(--line);
-            border-radius: 4px;
-            background: #eef3fb;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .thumb-btn {
-            border: 0;
-            background: transparent;
-            padding: 0;
-            cursor: zoom-in;
-            border-radius: 6px;
-        }
-
-        .thumb-btn:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
-
-        .img-modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(16, 36, 63, 0.68);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 50;
-            padding: 20px;
-            backdrop-filter: blur(2px);
-        }
-
-        .img-modal.open {
-            display: flex;
-        }
-
-        .img-modal-card {
-            width: min(92vw, 760px);
-            max-height: 88vh;
-            background: #ffffff;
-            border-radius: 12px;
-            border: 1px solid #d8e0ec;
-            box-shadow: 0 24px 60px rgba(9, 27, 52, 0.3);
-            overflow: hidden;
-            animation: modalIn 180ms ease-out;
-        }
-
-        .img-modal-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 10px 14px;
-            border-bottom: 1px solid #e0e7f2;
-            background: #f6f9ff;
-        }
-
-        .img-modal-title {
-            margin: 0;
-            font-size: 14px;
-            font-weight: 600;
-            color: #2a3d59;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .img-close {
-            width: 30px;
-            height: 30px;
-            border-radius: 999px;
-            border: 1px solid #d3dced;
-            background: #ffffff;
-            color: #26415f;
-            cursor: pointer;
-            font-size: 18px;
-            line-height: 1;
-        }
-
-        .img-close:hover {
-            background: #edf4ff;
-        }
-
-        .img-modal-body {
-            padding: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-height: calc(88vh - 56px);
-            background: linear-gradient(180deg, #fbfdff, #f2f7ff);
-        }
-
-        .img-modal-body img {
-            max-width: 100%;
-            max-height: calc(88vh - 80px);
-            object-fit: contain;
-            border-radius: 8px;
-            border: 1px solid #d9e2f2;
-            background: #ffffff;
-        }
-
-        @keyframes modalIn {
-            from {
-                opacity: 0;
-                transform: translateY(8px) scale(0.985);
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book List Sheet</title>
+        <style>
+            :root {
+                --bg: #f4f7fb;
+                --panel: #ffffff;
+                --line: #d4dbe6;
+                --text: #10243f;
+                --sub: #53627a;
+                --accent: #1570ef;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
+
+            * {
+                box-sizing: border-box;
             }
-        }
 
-        .pill {
-            display: inline-block;
-            border-radius: 999px;
-            padding: 4px 10px;
-            font-size: 12px;
-            font-weight: 600;
-        }
+            body {
+                margin: 0;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background: var(--bg);
+                color: var(--text);
+            }
 
-        .yes {
-            color: #0f6138;
-            background: #dcfce7;
-        }
+            .app {
+                max-width: 1100px;
+                margin: 24px auto;
+                padding: 16px;
+            }
 
-        .no {
-            color: #7a1820;
-            background: #fee2e2;
-        }
+            .toolbar {
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-bottom: 12px;
+            }
 
-        .read-toggle {
-            border: 0;
-            cursor: pointer;
-        }
+            .toolbar h1 {
+                margin: 0;
+                font-size: 22px;
+                font-weight: 700;
+            }
 
-        .empty {
-            color: var(--sub);
-            font-style: italic;
-        }
-    </style>
-</head>
-<body>
-    <main class="app">
-        <div class="toolbar">
-            <h1>Book List (Sheet View)</h1>
-            <div class="search-wrap">
-                <input id="searchInput" type="text" placeholder="Search by title, author, or publisher..." />
+            .search-wrap {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                width: min(520px, 100%);
+            }
+
+            #searchInput {
+                width: 100%;
+                height: 40px;
+                border: 1px solid var(--line);
+                border-radius: 6px;
+                padding: 0 12px;
+                font-size: 14px;
+                background: #fff;
+                color: var(--text);
+            }
+
+            #searchInput:focus {
+                outline: 2px solid rgba(21, 112, 239, 0.15);
+                border-color: var(--accent);
+            }
+
+            #count {
+                color: var(--sub);
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .sheet {
+                background: var(--panel);
+                border: 1px solid var(--line);
+                border-radius: 6px;
+                overflow: auto;
+                max-height: 72vh;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                min-width: 860px;
+            }
+
+            thead th {
+                position: sticky;
+                top: 0;
+                background: #eaf1fb;
+                z-index: 1;
+                font-size: 13px;
+                text-align: left;
+                white-space: nowrap;
+            }
+
+            .sort-btn {
+                width: 100%;
+                border: 0;
+                background: transparent;
+                color: inherit;
+                font: inherit;
+                text-align: left;
+                cursor: pointer;
+                padding: 0;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .sort-btn.center {
+                justify-content: center;
+            }
+
+            .sort-btn .arrow {
+                color: #446182;
+                font-size: 11px;
+                min-width: 10px;
+                text-align: center;
+            }
+
+            th,
+            td {
+                border: 1px solid var(--line);
+                padding: 10px 12px;
+                font-size: 14px;
+                vertical-align: top;
+            }
+
+            tbody tr:nth-child(even) {
+                background: #fafcff;
+            }
+
+            .center {
+                text-align: center;
+            }
+
+            .thumb {
+                width: 64px;
+                height: 84px;
+                object-fit: cover;
+                border: 1px solid var(--line);
+                border-radius: 4px;
+                background: #eef3fb;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .thumb-btn {
+                border: 0;
+                background: transparent;
+                padding: 0;
+                cursor: zoom-in;
+                border-radius: 6px;
+            }
+
+            .thumb-btn:focus-visible {
+                outline: 2px solid var(--accent);
+                outline-offset: 2px;
+            }
+
+            .img-modal {
+                position: fixed;
+                inset: 0;
+                background: rgba(16, 36, 63, 0.68);
+                display: none;
+                align-items: center;
+                justify-content: center;
+                z-index: 50;
+                padding: 20px;
+                backdrop-filter: blur(2px);
+            }
+
+            .img-modal.open {
+                display: flex;
+            }
+
+            .img-modal-card {
+                width: min(92vw, 760px);
+                max-height: 88vh;
+                background: #ffffff;
+                border-radius: 12px;
+                border: 1px solid #d8e0ec;
+                box-shadow: 0 24px 60px rgba(9, 27, 52, 0.3);
+                overflow: hidden;
+                animation: modalIn 180ms ease-out;
+            }
+
+            .img-modal-head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                padding: 10px 14px;
+                border-bottom: 1px solid #e0e7f2;
+                background: #f6f9ff;
+            }
+
+            .img-modal-title {
+                margin: 0;
+                font-size: 14px;
+                font-weight: 600;
+                color: #2a3d59;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .img-close {
+                width: 30px;
+                height: 30px;
+                border-radius: 999px;
+                border: 1px solid #d3dced;
+                background: #ffffff;
+                color: #26415f;
+                cursor: pointer;
+                font-size: 18px;
+                line-height: 1;
+            }
+
+            .img-close:hover {
+                background: #edf4ff;
+            }
+
+            .img-modal-body {
+                padding: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-height: calc(88vh - 56px);
+                background: linear-gradient(180deg, #fbfdff, #f2f7ff);
+            }
+
+            .img-modal-body img {
+                max-width: 100%;
+                max-height: calc(88vh - 80px);
+                object-fit: contain;
+                border-radius: 8px;
+                border: 1px solid #d9e2f2;
+                background: #ffffff;
+            }
+
+            @keyframes modalIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(8px) scale(0.985);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+
+            .pill {
+                display: inline-block;
+                border-radius: 999px;
+                padding: 4px 10px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            .yes {
+                color: #0f6138;
+                background: #dcfce7;
+            }
+
+            .no {
+                color: #7a1820;
+                background: #fee2e2;
+            }
+
+            .read-toggle {
+                border: 0;
+                cursor: pointer;
+            }
+
+            .empty {
+                color: var(--sub);
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="app">
+            <div class="toolbar">
+                <h1>Book List (Sheet View)</h1>
+                <div class="search-wrap">
+                    <input id="searchInput" type="search" placeholder="Search by title, author, or publisher..." />
+                </div>
+            </div>
+            <div id="count">Loading books...</div>
+            <div class="sheet">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 70px;">
+                                <button class="sort-btn center" type="button" data-sort-key="sl">
+                                    <span>SL</span><span class="arrow">-</span>
+                                </button>
+                            </th>
+                            <th style="width: 120px;">Thumbnail</th>
+                            <th>
+                                <button class="sort-btn" type="button" data-sort-key="title">
+                                    <span>Title</span><span class="arrow">-</span>
+                                </button>
+                            </th>
+                            <th>
+                                <button class="sort-btn" type="button" data-sort-key="author">
+                                    <span>Author</span><span class="arrow">-</span>
+                                </button>
+                            </th>
+                            <th>
+                                <button class="sort-btn" type="button" data-sort-key="publisher">
+                                    <span>Publisher</span><span class="arrow">-</span>
+                                </button>
+                            </th>
+                            <th style="width: 110px;" class="center">
+                                <button class="sort-btn center" type="button" data-sort-key="read">
+                                    <span>Read</span><span class="arrow">-</span>
+                                </button>
+                            </th>
+                            <th style="width: 120px;" class="center">
+                                <button class="sort-btn center" type="button" data-sort-key="collected">
+                                    <span>Collected</span><span class="arrow">-</span>
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookTableBody"></tbody>
+                </table>
+            </div>
+        </main>
+        <div id="imgModal" class="img-modal" role="dialog" aria-modal="true" aria-hidden="true">
+            <div class="img-modal-card">
+                <div class="img-modal-head">
+                    <h2 id="imgModalTitle" class="img-modal-title">Book Image</h2>
+                    <button id="imgModalClose" class="img-close" type="button"
+                        aria-label="Close image modal">&times;</button>
+                </div>
+                <div class="img-modal-body">
+                    <img id="imgModalImage" src="" alt="Book preview" />
+                </div>
             </div>
         </div>
-        <div id="count">Loading books...</div>
-        <div class="sheet">
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 70px;">
-                            <button class="sort-btn center" type="button" data-sort-key="sl">
-                                <span>SL</span><span class="arrow">-</span>
-                            </button>
-                        </th>
-                        <th style="width: 120px;">Thumbnail</th>
-                        <th>
-                            <button class="sort-btn" type="button" data-sort-key="title">
-                                <span>Title</span><span class="arrow">-</span>
-                            </button>
-                        </th>
-                        <th>
-                            <button class="sort-btn" type="button" data-sort-key="author">
-                                <span>Author</span><span class="arrow">-</span>
-                            </button>
-                        </th>
-                        <th>
-                            <button class="sort-btn" type="button" data-sort-key="publisher">
-                                <span>Publisher</span><span class="arrow">-</span>
-                            </button>
-                        </th>
-                        <th style="width: 110px;" class="center">
-                            <button class="sort-btn center" type="button" data-sort-key="read">
-                                <span>Read</span><span class="arrow">-</span>
-                            </button>
-                        </th>
-                        <th style="width: 120px;" class="center">
-                            <button class="sort-btn center" type="button" data-sort-key="collected">
-                                <span>Collected</span><span class="arrow">-</span>
-                            </button>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="bookTableBody"></tbody>
-            </table>
-        </div>
-    </main>
-    <div id="imgModal" class="img-modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="img-modal-card">
-            <div class="img-modal-head">
-                <h2 id="imgModalTitle" class="img-modal-title">Book Image</h2>
-                <button id="imgModalClose" class="img-close" type="button" aria-label="Close image modal">&times;</button>
-            </div>
-            <div class="img-modal-body">
-                <img id="imgModalImage" src="" alt="Book preview" />
-            </div>
-        </div>
-    </div>
-    <script src="./index.js"></script>
-</body>
+        <script src="./index.js"></script>
+    </body>
 </html>

@@ -59,10 +59,11 @@ function saveReadMap() {
 
 function getReadStatus(book, idx) {
     const key = getBookKey(book, book.__id ?? idx);
+    console.log(book)
     if (Object.prototype.hasOwnProperty.call(readMap, key)) {
         return !!readMap[key];
     }
-    return !!book.read;
+    return !!book.is_read;
 }
 
 function getSortValue(book, key, idx) {
