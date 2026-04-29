@@ -138,8 +138,8 @@
     {
         "title": "হৃদয়ের সাথে হৃদয়ের কথা",
         "author": "মাহমুদ বিন নূর",
-        "publisher": "",
-        "thumbnail": "",
+        "publisher": "রাইয়ান প্রকাশন",
+        "thumbnail": "./thumbnail/হৃদয়ের সাথে হৃদয়ের কথা.png",
         "collected": true,
         "is_read": false
     },
@@ -155,7 +155,7 @@
         "title": "শয়তানের বিরুদ্ধে লড়াই",
         "author": "মাহমুদ বিন নূর",
         "publisher": "রাইয়ান প্রকাশন",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/শয়তানের বিরুদ্ধে লড়াই.png",
         "collected": true,
         "is_read": false
     },
@@ -163,7 +163,7 @@
         "title": "অলসতার বিরুদ্ধে লড়াই",
         "author": "মাহমুদ বিন নূর",
         "publisher": "রাইয়ান প্রকাশন",
-        "thumbnail": "",
+        "thumbnail": "./thumbnail/অলসতার বিরুদ্ধে লড়াই.png",
         "collected": true,
         "is_read": false
     },
